@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "Why Are You Doing This To Yourself?"
-date:   2017-05-02 13:30:47 +0000
+date:   2017-05-02 09:30:48 -0400
 ---
 
 
-## What’s with the title?
+# What’s with the title?
 
 Life is a grind right now. It sort of feels like I’m running a marathon. And, it’s raining. And, there’s a hole in my shoe. And, I’m naked (just kidding). I mean, it’s a good grind—a rewarding grind. I started Flatiron’s *Online Web Developer Program* about 3 weeks ago, and I can already feel myself growing. I am learning every single day and the “aha!” moments keep rolling in. But, it’s a grind, nonetheless.
 
@@ -17,7 +17,7 @@ People at work think I’m nuts. Our VP of Production used to be the first perso
 
 “Ok, we get it, you’re nuts. So why *are* you doing this?” Well, thanks for asking. :)
 
-## I want this. (for the qualitative reader)
+# I want this. (for the qualitative reader)
 
 First the (overly) simplified version: I’m doing this because… **I want it.** I *want* to be a web developer. I *want* to work in technology and build digital experiences. And, anyone who knows me at all, knows that I tend to go after the things that I want.
 
@@ -37,7 +37,7 @@ So, I decided that it was time for a change and immediately jumped on the job hu
 
 This got me thinking, “Maybe it’s time for a change…” But every realization leads to another question, right? The question that this epiphany brought up was one that I would have to literally sit down and think about: “What do I really want in a career? What do I want to be doing with my *life*?”
 
-## Now what? (for the quantitative reader)
+# Now what? (for the quantitative reader)
 
 So, I did what any person with diagnosed Obsessive Compulsive Disorder would do: I made a spreadsheet. First, I added a list of all the factors that were important to me, when thinking about the ideal career. This included things like: level of enjoyment with the work itself, natural ability with core skills, trend of the industry overall, ability to freelance and be entrepreneurial, relatively high average salary (yes, it definitely matters), and opportunities to get involved outside of the full-time job. I weighted these attributes, and a few others, to account for how important each one was to me. 
 
@@ -54,7 +54,7 @@ The results? Web Developer came out on top. It wasn’t even a close competition
 
 And finally, I think it’s something I have a shot of being really good at. With the web dev dabbling I have done in the past, it seems to align really well with the way I naturally think (my next blog will expand on this a little more and tie it to music, specifically). The concepts have made sense to me, so far; and when they haven’t, I have had the perseverance to work through them.
 
-## Validated?
+# Validated?
 
 So, here I am. About 3 weeks deep in the curriculum. And, how is it going? So far, I am 100% confident I have made the right choice. I am *really* enjoying the material. I actually *look forward* to waking up early, every day, so that I can open my laptop and learn about coding. I am excited about all the opportunities I see in front of me, and all of the value I will be able to create. I think it’s going to be worth every penny, confused glance, canceled date, dying alternator, and exhausted morning.
 
