@@ -5,8 +5,6 @@ date:   2017-05-02 09:30:48 -0400
 ---
 
 
-# What’s with the title?
-
 Life is a grind right now. It sort of feels like I’m running a marathon. And, it’s raining. And, there’s a hole in my shoe. And, I’m naked (just kidding). I mean, it’s a good grind—a rewarding grind. I started Flatiron’s *Online Web Developer Program* about 3 weeks ago, and I can already feel myself growing. I am learning every single day and the “aha!” moments keep rolling in. But, it’s a grind, nonetheless.
 
 The online program is being tacked on to my full-time job, the one I’ve had for almost two years now (I’m a Brand Strategist for a creative marketing company, in case you were curious). I moved in with my parents, so that I could afford the monthly tuition. My commute is 75 minutes, each way. I’m driving the same car I rolled over when I was 16 (picture something from *Mad Max*, but with a lot less horsepower). My mechanic says the alternator is ready to give out any day now; I respond with, “Great.” My alarm goes off at 5am, in the hopes of avoiding rush hour and I’m sitting at my desk by 7:15am, with Learn.co open in my browser. Work is 9:00am to 5:30pm and then I’m back to Learn for another hour or two before starting the commute home. My eyes, when I can keep them open, are starting to have tinges of “bloodshot red” around the edges.
