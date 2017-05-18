@@ -5,7 +5,7 @@ date:   2017-05-18 18:45:21 -0400
 ---
 
 
-In my previous blog post, [*Why Are You Doing This To Yourself?*](http://kyleblee.com/2017/05/02/why_are_you_doing_this_to_yourself/), I attempted to illustrate the reasoning behind my aspiration to become a web developer. In it, I told a narrative which chronicled my roundabout way of arriving here, at [*Flatiron School*](https://flatironschool.com/programs/online-web-developer-career-course/). The truth is, I’ve done quite a bit of bouncing around to arrive at “now”, and in that time I’ve worn more than a few hats. This post—the one you’re reading now—is inspired by a that I’ve worn for quite a while (music) and a hat that I just recently put on (code).
+In my previous blog post, [*Why Are You Doing This To Yourself?*](http://kyleblee.com/2017/05/02/why_are_you_doing_this_to_yourself/), I attempted to illustrate the reasoning behind my aspiration to become a web developer. In it, I told a narrative which chronicled my roundabout way of arriving here, at [*Flatiron School*](https://flatironschool.com/programs/online-web-developer-career-course/). The truth is, I’ve done quite a bit of bouncing around to arrive at “now”, and in that time I’ve worn more than a few hats. This post—the one you’re reading now—is inspired by a hat I’ve worn for quite a while (music) and a hat that I just recently put on (code).
 
 
 ***Verse***
