@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  Code (in the Key of C Major)
-date:   2017-05-18 22:45:20 +0000
+date:   2017-05-18 18:45:21 -0400
 ---
 
 
-## Verse
+***Verse***
 
 In my previous blog post, [*Why Are You Doing This To Yourself?*](http://kyleblee.com/2017/05/02/why_are_you_doing_this_to_yourself/), I attempted to illustrate the reasoning behind my aspiration to become a web developer. In it, I told a narrative which chronicled my roundabout way of arriving here, at [*Flatiron School*](https://flatironschool.com/programs/online-web-developer-career-course/). The truth is, I’ve done quite a bit of bouncing around to arrive at “now”, and in that time I’ve worn more than a few hats. This post—the one you’re reading now—is inspired by a that I’ve worn for quite a while (music) and a hat that I just recently put on (code).
 
@@ -18,11 +18,11 @@ Ever since I wrote my first HTML tag, I have noticed some striking similarities 
 Now that I’ve set the scene, let’s take it to the chorus.
 
 
-## Chorus
+***Chorus***
 
 At first glance, music and code don’t seem to have an awful lot in common. One is auditory, the other is mostly visual. One has been around for centuries, the other is a fairly recent development. One is seen as “creative”, the other is seen as “logical” (though, *we* obviously know that coding can indeed be creative). However, when you have a baseline of knowledge in each, you start to see some interesting harmony in the details.
 
-#### *Music Theory = syntax and semantics*
+**Music Theory = syntax and semantics**
 
 In JavaScript and Ruby, there are some rules that you must follow in order for the computer to interpret your program correctly. Whether it’s an `end` for every `def` keyword, the specific placement of curly braces, or the need to define a variable before it can be referred to; there are certain standards that must be followed if you want the code to run. These principles of syntax and semantics are similar to the “rules” that musicians follow to build scales, harmony, musical phrases, and entire compositions. In music these guiding conventions are referred to, broadly, as *music theory*. There are specific relationships between tones that musicians know create certain sounds. If you are playing over a Maj7#11 tonality, you might want to apply a Lydian phrase because of the characteristic raised fourth. If your piano player lays down an altered dominant, you should avoid natural 9ths and 5ths because you don’t want to rub elbows with any altered tones they might be including.
 
@@ -30,7 +30,7 @@ This comparison can be taken even further, as both disciplines also allow for a 
 
 <iframe src="https://giphy.com/embed/h0TPbr80IwoP6" width="480" height="313" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/sly-stone-and-the-family-h0TPbr80IwoP6"></a></p>
 
-#### *Live Sound / Recording Production = debugging*
+**Live Sound / Recording Production = debugging**
 
 During my time at *The University of the Arts*, I also had the opportunity to intern as a Live Sound Technician at the *Caplan Recital Hall*, where UArts ensembles frequently held rehearsals and performances. During this experience, I learned how to follow an audio signal from an input—like a reverb drenched guitar coming out of a Fender Hot Rod—all the way to the final output (a PA system). Along the way, the sound was routed, boosted, cleaned up, altered, and even recorded. 
 
@@ -38,7 +38,7 @@ Working in this role, you quickly learn how to troubleshoot, on the fly. It is g
 
 Does this sound familiar? It should, because this process is *exactly* what developers do every single day when they are debugging code. There is a starting point, a desired ending point or result, and somewhere in the middle things aren’t behaving as expected. Fixing these “bugs” typically requires starting at the beginning and following the logic all the way through the program, until you find where things are going wrong—just like a live sound technician does with a misbehaving audio signal. This linear problem solving is a vital skill in both fields.
 
-#### *Songwriting = building a digital product*
+**Songwriting = building a digital product**
 
 If you ask a 10 random people on the street who their favorite songwriter is, you’ll probably get 10 different answers (except for the 2 or 3 “I don’t know”s). I bet you have one, too; and I doubt it’s the same as mine. 
 
@@ -50,7 +50,7 @@ Furthermore, just as every songwriter has their own voice, every developer write
 
 <iframe src="https://giphy.com/embed/cA9q5AUOWsnSg" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/jack-nicholson-motorcycle-easy-rider-cA9q5AUOWsnSg"></a></p>
 
-#### *Improvising a solo = breaking a feature down into atomic parts*
+**Improvising a solo = breaking a feature down into atomic parts**
 
 Let’s take it to a different genre. Uh one, uh two, uh one, two, three, four (bebop melody plays in the background). When people hear a jazz great like Dexter Gordon improvise, they often say something along the lines, “Wow! It’s amazing how he just makes all of that up on the spot. It’s so effortless for him!” But anyone who has studied jazz knows that this statement is further from the truth than most people might think. Improvisation isn’t like… 100% improvisation. It’s more like 25% improvisation.
 
@@ -60,7 +60,7 @@ This concept, of breaking a large problem or task (a solo) into much smaller pro
 
 And the analogy doesn’t stop there! We can actually go up a level. See, Dexter’s bag of tricks is full of *different* phrases for *different* situations. So is a developer’s bag of tricks! Using Bootstrap to quickly implement a responsive image carousel, utilizing media queries to adjust the page’s layout for various screen sizes, applying AJAX to create a single-page application that avoids constant page refreshing; all of these are *different* skills that solve *different* problems. But, they all come together to create a useful and intuitive digital product; much like Dexter using an altered dominant phrase in the middle of his 2nd chorus. 
 
-## Outro
+***Outro***
 
 So, there’s my argument—my realization. Music and code, while seemingly disparate on the surface, actually have quite a bit in common. Both have rules you must follow (with some informed flexibility). Both require linear problem solving. Both benefit from an unwavering focus on the target audience or end user. And both involve the ability to break a large task into many smaller, atomic parts. 
 
