@@ -22,7 +22,7 @@ So, we have the idea… now what’s the plan?
 
 <iframe src="https://giphy.com/embed/xLIwD85C0z9D2" width="480" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/jennifer-lawrence-fire-american-hustle-xLIwD85C0z9D2"></a></p>
 
- ## Initial Planning
+## Initial Planning
 
 Luckily, before I started on the project, I watched Avi’s *CLI Data Gem Walkthrough* (twice...), which was immensely helpful. One of the things that Avi did, before even getting started on coding, was make a “NOTES.md” file where he explicitly wrote out what he wanted his program to do, as well as general guidelines on how it might be built. I tried doing the same thing with Daily Recipes. 
 
@@ -31,7 +31,7 @@ Luckily, before I started on the project, I watched Avi’s *CLI Data Gem Walkth
 At this point, I felt like I had a pretty good idea of what I was building and how I was going to build it. Now it was time to roll up the sleeves, and start cooking! (please excuse the "corn"y sense of humor)
 
 
- ## Building it out (WARNING: it’s about to get nerdy)
+## Building it out (WARNING: it’s about to get nerdy)
 
 The first thing I needed to do was get the project’s file structure set-up. Once again, Avi’s video really helped pave the way here. I used `bundle gem daily_recipes` to automatically generate the project files. Then, I created a remote git repository and hooked it up to my local repository, after making my first commit. 
 
@@ -124,7 +124,7 @@ Then, it was time for the final step: taking the user to the recipe's webpage if
 
 ![](http://i.imgur.com/IyHMaBX.png?1)
 
- ## Bon appetit!
+## Bon appetit!
 
 And with that, my daily-recipes is done!! I'm going to go back through to add comments, which will make things more clear for other developers, and do any immediate refactoring that I see!
 
