@@ -107,12 +107,12 @@ Now I’ll apply the same logic to the other two sites. Please hold.
 
 Alright, at this point, we had built the additional scraping methods to get more information for the recipe that the user is interested in, and the class method *#recipe_description_card* was returning that more detailed recipe instance. We could now use that returned object in the CLI class to print out the information for the user and prompt them for the next, final layer of interaction: being taken to the full recipe page in the browser, seeing the menu again, or exiting the program.
 
-To do this, the “code I wish I had" would be a method that took in the *detailed_recipe* as an argument, called a separate method called *#print_recipe* to print that *detailed_recipe*, and gave the user another set of options. Printing the recipe was easy using the *recipe.title* and *recipe.description* attributes, as well as iterating through the *recipe.ingredients*. I decided to place the final layer of the user flow (the choice to navigate to the recipe's page for full directions, go back to the list, or exit the program) in it's own method called *#full_directions?*.
+To do this, the “code I wish I had" would be a method that took in the *detailed_recipe* as an argument, called a separate method called *#print_recipe* to print that *detailed_recipe*, and gave the user another set of options. Printing the recipe was easy using the *recipe.title* and *recipe.description* attributes, as well as iterating through the *recipe.ingredients*. 
 
 ![](http://i.imgur.com/q5Aqdt0.png?1)
 
 
-I started to build *#full_directions?* in a very similar way to *#start*, in the sense that it prompts the user for a response and then starts up an until loop which doesn't break until the user has typed 'more' (to be taken to the full recipe in-browser), 'menu' (to see the menu again), or 'exit' (to exit the program). I got it up and running, but when I went to test it, I noticed that now, if the user types 'exit' in the previous input interaction (after seeing the daily list of recipes), they are shown *#goodbye* but are then asked if they would like to see the full recipe... 
+The final layer of the user flow (the choice to navigate to the recipe's page for full directions, go back to the list, or exit the program) was placed in it's own method called *#full_directions?*. I started to build *#full_directions?* in a very similar way to *#start*, in the sense that it prompts the user for a response and then starts up an until loop which doesn't break until the user has typed 'more' (to be taken to the full recipe in-browser), 'menu' (to see the menu again), or 'exit' (to exit the program). I got it up and running, but when I went to test it I noticed that now, if the user types 'exit' in the previous input interaction (after seeing the daily list of recipes), they are shown *#goodbye* (as expected) but are then asked if they would like to see the full recipe... 
 
 ![](http://i.imgur.com/ctT4Flx.png?1)
 
@@ -126,7 +126,7 @@ Then, it was time for the final step: taking the user to the recipe's webpage if
 
 ***--Bon appétit!--***
 
-And with that, my daily-recipes is done!! I'm going to go back through to add comments, which will make things more clear for other developers, and do any immediate refactoring that I see!
+And with that, my daily-recipes is done!! I'm going to go back through to add comments, which will make things clearer for other developers, and do any immediate refactoring that I see!
 
 <iframe src="https://giphy.com/embed/11sBLVxNs7v6WA" width="480" height="217" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cheer-cheering-11sBLVxNs7v6WA"></a></p>
 
