@@ -7,16 +7,16 @@ date:   2017-08-02 10:22:07 -0400
 
 Hip hip hooray for completing my first code project! It’s also the first time I haven’t been simply writing code to make Learn’s tests pass—though, that’s pretty fun, too. This was my first real opportunity to work through the entire process: coming up with an idea, thinking through how it will work, making a plan, and then actually building it out. Overall, I’d say it went pretty well!
 
-So, what did I build? Well, when I started thinking about what my big, million dollar idea was going to be, I got kind of hungry (this happens to me a lot). So, I’m in my kitchen at home, eating leftovers, when I see a massive 250lb cookbook open on the counter. Above that cookbook, in a pair of brown cabinets, the shelves are completely full with other recipe books of similar sizes and with similar headlines. I thought to myself, “Surely there is a less exhausting way to choose a recipe…” And there is, obviously; there are probably over a hundred websites that do this very thing. But, I decided to do it myself, in a slightly different and much simpler way.
+So, what did I build? Well, when I started thinking about what my big, million dollar idea was going to be, I got kind of hungry (this happens to me a lot). So, I’m in my kitchen at home, eating leftovers, when I see a massive 250lb cookbook open on the counter. Above that cookbook, in a pair of brown cabinets, the shelves are completely full with countless other recipe books of similar sizes, with similar headlines. I thought to myself, “Surely there is a less exhausting way to choose a recipe…” And there is, obviously; there are probably over a hundred websites that do this very thing. But, I decided to do it myself, in a slightly different and much simpler way.
 
 Here’s the elevator pitch:
 >“Searching for a recipe can be overwhelming. With seemingly hundreds of websites and cookbooks to look through, it can be hard to make a quick decision on what you want to make for a tasty personal, or family, meal. To avoid this, people frequently resort to making the same recipes, over and over again—sacrificing spontaneity for convenience. It's time for a solution.
 
->Welcome to Daily Recipes! Your new, handy-dandy CLI application for receiving a short, digestible list of recipes every day. At the perfect intersection of simplicity and laziness, Daily Recipes makes it easy to choose from a short menu of dishes (scraped from three popular recipe sites), get more information on any that pique your interest, and even open any of the full recipes in your preferred browser. It is simple, easy to use and saves you from having to look through countless sites just to  find one quick recipe.
+>Welcome to Daily Recipes! Your new, handy-dandy CLI application for receiving a short, digestible list of recipes every day. At the perfect intersection of simplicity and laziness, Daily Recipes makes it easy to choose from a concise menu of dishes (scraped from three popular recipe sites), get more information on any that pique your interest, and even open the full recipes in your preferred browser. It is simple, easy to use and saves you from having to look through countless sites just to  find one quick recipe.
 
 > Enjoy, and happy cooking!”
 
-Like I’ve already admitted, maybe it’s been done before; but I felt like this could be a good / useful tool, and more importantly, it was easy to envision how it would translate to object-oriented Ruby. It also provided a challenge that would require multiple layers, which was one of the primary asks for the project.
+Like I’ve already admitted, maybe it’s been done before; but I felt like this could be a good / useful tool, and more importantly, it was easy to envision how it would translate to object-oriented Ruby. It also provided a challenge that would require multiple layers, which was one of the primary asks of the project.
 
 So, we have the idea… now what’s the plan? 
 
@@ -24,7 +24,7 @@ So, we have the idea… now what’s the plan?
 
 ***--Initial Planning--***
 
-Luckily, before I started on the project, I watched Avi’s *CLI Data Gem Walkthrough* (twice...), which was immensely helpful. One of the things that Avi did, before even getting started on coding, was make a “NOTES.md” file where he explicitly wrote out what he wanted his program to do, as well as general guidelines on how it might be built. I tried doing the same thing with Daily Recipes. 
+Luckily, before I started on the project, I watched Avi’s *CLI Data Gem Walkthrough* (twice...), which was immensely helpful. One of the things that Avi did, before even getting started on the code, was make a “NOTES.md” file where he explicitly wrote out what he wanted his program to do, as well as general guidelines on how it might be built. I tried doing the same thing with Daily Recipes. 
 
 ![](http://i.imgur.com/C2T3Q5V.png?1)
 
@@ -33,22 +33,22 @@ At this point, I felt like I had a pretty good idea of what I was building and h
 
 ***--Building it out (WARNING: it’s about to get nerdy)--***
 
-The first thing I needed to do was get the project’s file structure set-up. Once again, Avi’s video really helped pave the way here. I used `bundle gem daily_recipes` to automatically generate the project files. Then, I created a remote git repository and hooked it up to my local repository, after making my first commit. 
+The first thing I needed to do was get the project’s file structure set-up. Once again, Avi’s video really helped pave the way here. I used `bundle gem daily_recipes` to automatically generate the project files. Then, I created a remote git repository and hooked it up to my local repository, once my first commit had been made. 
 
-Next, I created a "daily-recipes" file in the bin directory, which would be my primary executable, and added a shebang line. The file, for the time being, puts-ed "You ready to eat some food, yo?"—just so I could be sure it was working. Then, I created a CLI.rb file inside of my lib/daily_recipes directory for actually handling the user interaction of the program (the CLI controller) and created a class called *#start* that would greet the user and *gets* the first input (whether or not they would like to see the recipes of the day). The final *#start* method looked something like this: 
+Next, I created a "daily-recipes" file in the bin directory, which would be my primary executable, and added a shebang line. I also added a CLI.rb file inside of my lib/daily_recipes directory for actually handling the user interaction of the program (the CLI controller) and created a class called *#start* that would greet the user and *gets* the first input. The final *#start* method looked something like this: 
 
 
 ![](http://i.imgur.com/sKPtrKw.png?1)
 
-I eventually added conditional statements inside of *#start* so that "yes" presented a menu for them to choose from and "no" said a *#goodbye* message before exiting the program. Later, I went back and added an *until* loop so that I can could give a "not sure what you meant" message for unexpected inputs and prompt the user for input again.
+I eventually added conditional statements inside of *#start* so that "yes" presented a menu for them to choose from and "no" printed a *#goodbye* message before exiting the program. Later, I went back and added an *until* loop so that I can could give a "not sure what you meant" message for unexpected inputs and prompt the user for input again.
 
 When I tried running the daily-recipes executable, I got an "uninitialized constant" error because my load dependencies weren't set up correctly. So, I continued to watch Avi's video and use that guidance to fix the dependencies in my program. I decided to use the lib/daily_recipes file as my environment file, similar to what he does in the video.
 
-Next, I defined a class called "recipe" in a file called "recipe.rb" that would be responsible for creating new recipes by scraping 3 different recipe sites. It would also be responsible for returning *@@all* the recipes that had been created—so that they can be printed by the CLI class—as well as giving more detail on the specific recipe(s) that the user is interested in learning more about (by scraping individual, full recipe pages).
+Next, I defined a class, "recipe", in new a file called "recipe.rb" that would be responsible for creating new recipes by scraping 3 different recipe sites. It would also be responsible for returning *@@all* the recipes that had been created—so that they can be printed by the CLI class—as well as giving more detail on the specific recipe(s) that the user is interested in (by scraping individual, full recipe pages).
 
-I had forgotten to add pry earlier, so I added it to the gemspec file and my environment file, as well. I'm still not entirely sure how Avi required dependencies in the video when he used the console file… but it seems to be working for now, so I’m just going to go with it. While adding dependencies, I added the Nokogiri and OpenURI dependencies to my gemspec and environment files so that I could start scraping.
+I had forgotten to add pry earlier, so I added it to the gemspec and my environment files, as well. I'm still not entirely sure how Avi required dependencies in the video when he used the console file… but it seems to be working for now, so I’m just going to go with it. While adding dependencies, I also added Nokogiri and OpenURI to the mix, so that I could start scraping.
 
-Then, it was time to get into the nitty-gritty: scraping. For the first level, I needed three separate scraping methods (one for each recipe list page). I started with allrecipes.com as the first site to scrape from, and decided to call the method *#scrape_allrecipes_website*. First, I needed to use Nokogiri::HTML and OpenURI to define a "doc" variable that I could start searching through. To find out which CSS selectors grab the correct elements, I used Chrome's Inspect Element feature and binding.pry so that I could play around until I found the correct classes/ids. Once I found the correct selector for each recipe element (`#grid .grid-col--fixed-tiles`), I decided to include a conditional statement inside of the *#each_with_index* iterator that only creates a new recipe if the index is less than 5. I realize this was a pattern that Avi advised against using in his anti-patterns... but there are a ton of recipes on these sites and I'd rather just give 5 from each one (right from the beginning) to keep the program faster and simpler to use. It’s also one of the core differentiating aspects of my program: presenting the user with a short and digestible list of recipes—not an overwhelming laundry list. I’ll have this method return the *@@all* class variable. It won’t be used in the DailyRecipes::CLI #menu method, but it could be useful for later methods that use this method.
+Then, it was time to get into the nitty-gritty of scraping. For the main menu, I needed three separate scraping methods (one for each recipe list page). I started with allrecipes.com as the first site to scrape from, and decided to build a method called *#scrape_allrecipes_website*. First, I needed to use Nokogiri::HTML and OpenURI to define a "doc" variable that I could start searching through. To find out which CSS selectors grab the correct elements, I used Chrome's *Inspect Element* feature and `binding.pry` so that I could play around until I found the correct classes/ids. Once I had the correct selector for the recipe elements (`#grid .grid-col--fixed-tiles`), I decided to include a conditional statement inside of the *#each_with_index* iterator that only creates a new recipe if the index is less than 5. I realize this was a pattern that Avi advised against using in his anti-patterns, but there are a ton of recipes on these sites and I'd rather just give 5 from each one to make the program faster and easier to use. It’s also one of the core differentiating aspects of my program: giving the user a short and digestible list of recipes—not an overwhelming laundry list. I’ll have this method return the *@@all* class variable. It won’t be used in the DailyRecipes::CLI #menu method, but it could be useful for later methods that use this method.
 
 Once I got the correct selector for the title attribute, I ran into a problem to solve... The selector that all of the recipe grids are using is also being used by advertisements / marketing that are mixed throughout. The problem is that the h3's in these grids return an empty string (and we aren't interested in them anyways, since they aren't recipes). 
 
@@ -124,7 +124,7 @@ Then, it was time for the final step: taking the user to the recipe's webpage if
 
 ![](http://i.imgur.com/IyHMaBX.png?1)
 
-***--Bon appetit!--***
+***--Bon appétit!--***
 
 And with that, my daily-recipes is done!! I'm going to go back through to add comments, which will make things more clear for other developers, and do any immediate refactoring that I see!
 
