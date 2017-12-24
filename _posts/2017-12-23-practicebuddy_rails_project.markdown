@@ -1,27 +1,24 @@
 ---
 layout: post
 title:      "PracticeBuddy (Rails Project)"
-date:       2017-12-24 04:32:05 +0000
+date:       2017-12-23 23:32:06 -0500
 permalink:  practicebuddy_rails_project
 ---
 
 
 Whew! After about a week of building, I’m excited to announce that I have finally completed my Rails project! Rails was a challenging but also immensely rewarding section of the course, and I am beyond excited to start on JavaScript. But before I do, how about a quick “encore” to recap the project.
-<br>
 
 ***Omg... another music post!?***
 
 As I have mentioned in a few other blog posts—such as, [Why Are You Doing This To Yourself](http://kyleblee.com/2017/05/02/why_are_you_doing_this_to_yourself/), [Code (in the Key of C Major](http://kyleblee.com/2017/05/18/code_in_the_key_of_c_major/), and [Why Brands Should Be More Like Brands](http://redpegmarketing.com/news/why-brands-should-be-more-like-bands/)—I come from a fairly musical background. I mean, my parents don’t play any instruments, and I didn’t start playing at the ripe age of 5; but I picked up a guitar for the first time in a middle school music class and I haven’t put it down since. Hell, I was even a music school dropout before deciding that a degree in marketing was probably a better move, in terms of maintaining a “stable income”. 
 
 While there have been ebbs-and-flows in the amount of time I have dedicated to the craft of music, it has always had an affect on the way I think and perceive the world. So, when I was brainstorming ideas for my Rails project, it was only natural that a couple ideas related to music popped up. One of them is actually something I’ve been thinking about for a while. It aims to solve a problem that most instrumentalists have had to solve on their own—often in a fairly “manual” way.
-<br>
 
 ***The Problem***
 
 Part of becoming a better musician (particularly for improvisers) is internalizing a vast and ever-growing vocabulary of musical phrases. These musical phrases—often called “licks”, “chops”, etc—are like a “bag of tricks” that a musician can pull out and use, on the spot, in various playing situations.
 
 There are many ways to learn these phrases, such as: transcribing solos off of records, buying lick books and play alongs, swapping ideas with friends, and writing your own. However, learning the lick is really just the beginning of the process. In order to keep them fresh and usable, a player has to constantly review phrases they have learned in the past. This can become overwhelming, as serious musicians—through years of practice—will often learn hundreds upon hundreds of unique phrases, for dozens of tonal situations. I mean, that’s a lot to keep track of…
-<br>
 
 ***Welcome to PracticeBuddy!***
 
@@ -31,7 +28,7 @@ By organizing your practice routine, and making sure you never forget a lick, Pr
 
 Alright, you’ve got the idea; now let’s get specific about how it works.
 
-<iframe src="https://giphy.com/embed/5C3ES5uAlDCo" width="480" height="465" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kangaroo-shred-5C3ES5uAlDCo"></a></p><br>
+<iframe src="https://giphy.com/embed/5C3ES5uAlDCo" width="480" height="465" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kangaroo-shred-5C3ES5uAlDCo"></a></p>
 
 
 ***Landing Page / Sign Up / Sign In***
@@ -54,7 +51,7 @@ You can also sign up via Facebook, which I implemented using the gems: `omniauth
 To sign in, the user simply enters their email—which is unique and used to identify that user in the database—and their password, which is authenticated through `bcrypt`. For this demonstration, I’ll be using an account that I have already seeded with data, so the views are more representative of what an active user would see. 
 
 <a href="https://imgur.com/QxGFkMG"><img src="https://i.imgur.com/QxGFkMG.png" title="source: imgur.com" /></a>
-<br>
+
 
 ***We’re in! (the Home view)***
 
@@ -67,7 +64,7 @@ To collect this information, the app uses class level scope methods to query rel
 * *Overdue Licks*—selects all of the `Lick` objects who were scheduled to be practiced at a past date, but haven’t yet been practiced
 * *Sloppiest Licks*—this section displays licks which have the lowest integers in their `performance_rating` column. The user specifies this number, from 1 to 5, whenever they practice a lick and it’s meant to represent how well they could execute the lick that day—could they play it cleanly with confidence, or was it sloppy with mistakes? This helps them stay on top of phrases that require extra attention and practice
 * *New Backing Tracks*—this final section shows them the most recently created backing tracks (created by any user), so they can glance through them and add any they like to their own licks, to be used in future practice sessions.
-<br><br>
+
 
 ***Licks***
 
@@ -76,7 +73,7 @@ To collect this information, the app uses class level scope methods to query rel
 <a href="https://imgur.com/Ld5FjPn"><img src="https://i.imgur.com/Ld5FjPn.png" title="source: imgur.com" /></a>
 
 I will talk mostly about the `licks#index`, `licks#new`, and `licks#edit` actions / views here, since that is where most of the “action” is.
-<br><br>
+
 
 *licks#index (URL: /users/:id/licks*
 <a href="https://imgur.com/iA3MAl3"><img src="https://i.imgur.com/iA3MAl3.png" title="source: imgur.com" /></a>
@@ -84,7 +81,7 @@ I will talk mostly about the `licks#index`, `licks#new`, and `licks#edit` action
 Each user has a `licks#index` view where they can see all of the licks they have created. There are *filter* and *sort* select tags available for easily narrowing results to specific licks that the user is interested in. Behind the scenes, class level scope methods are querying the collection of licks that the user is looking for and then running through a number of sort methods to prepare them for displaying on the page. The view changes depending on which sort selection has been made (for example, dates appear next to licks when *Date Last Practiced* or *Scheduled Practice Date* have been selected; or, tonalities appear, when that is more applicable).
 
 <a href="https://imgur.com/Fq3AaLp"><img src="https://i.imgur.com/Fq3AaLp.png" title="source: imgur.com" /></a>
-<br><br>
+
 
 *licks#new and licks#edit (URL: /users/:id/licks/new or /users/:userid/licks/:id/edit)*
 <a href="https://imgur.com/Oi82CH5"><img src="https://i.imgur.com/Oi82CH5.png" title="source: imgur.com" /></a>
@@ -92,7 +89,7 @@ Each user has a `licks#index` view where they can see all of the licks they have
 `licks#new` and `licks#edit` share the same form, which is written in a partial and rendered into each view. You will see fields (generated through the `form_for` helper) for all of the attributes that are directly associated with a lick, such as: name, bpm, current key, link, performance rating, scheduled practice, and description. 
 
 You will also see a collection select for `Artist`, as well as collection check boxes for `Tonalities` and `BackingTracks`. `Artist`, `BackingTracks`, and `Tonalities` also have nested forms that will instantiate objects that are already associated with this particular `Lick`. These associated objects are instantiated through custom setter methods, such as: `Lick.new_backing_track=`, `Lick.new_tonalities=`, and `CustomSetters::InstanceMethods.new_artist=` (which is included in both Lick and BackingTrack models, to keep things DRY).
-<br><br>
+
 
 ***BackingTracks***
 
@@ -107,7 +104,7 @@ Unlike the `Lick` class, however, users can access `backing_track#show` and `bac
 There is also a nested form (well, a nested field, really...) on `backing_tracks#new` and `backing_tracks#edit` for the associated `Artist` class, so that users can build `Artist` objects off of the `BackingTrack` they are currently creating / updating. This is done through the module `CustomSetters::InstanceMethods`, whose `.new_artist=` setter method is also used during mass assignment for `Lick` objects.
 
 <a href="https://imgur.com/cknBROM"><img src="https://i.imgur.com/cknBROM.png" title="source: imgur.com" /></a>
-<br><br>
+
 
 ***Errors / Flash Messages***
 
@@ -116,7 +113,7 @@ There is also a nested form (well, a nested field, really...) on `backing_tracks
 Finally, error messages and simple highlighting (via the `field_with_errors` class) have also been implemented so that when validation fails, the reason is clearly expressed to the user. Flash messages are also used throughout the site to communicate things, such as: “Lick created!”, “Backing Track deleted!”, “Hmm, we can’t seem to find a lick like that.”, etc. Both errors and flash messages are rendered into relevant views using partials.
 
 <a href="https://imgur.com/CPVM5sR"><img src="https://i.imgur.com/CPVM5sR.png" title="source: imgur.com" /></a>
-<br><br>
+
 
 ***Now, get back to practicing! Or... JavaScript.***
 
