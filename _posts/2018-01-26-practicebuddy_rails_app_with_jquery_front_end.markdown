@@ -8,7 +8,7 @@ permalink:  practicebuddy_rails_app_with_jquery_front_end
 
 ***Encore, PracticeBuddy! Encore!***
 
-For my Rails project, before entering JavaScript land, I built something called *PracticeBuddy*—a simple web-app that helps musicians track and maintain an ever growing musical vocabulary. Here’s a brief reintroduction, for context:
+For my Rails project, before entering JavaScript land, I built something called *PracticeBuddy*—a simple web-app that helps musicians track and maintain an evergrowing musical vocabulary. Here’s a brief reintroduction, for context:
 
 As musicians (specifically, improvisers) practice and develop over time, they internalize hundreds upon hundreds of musical phrases (licks, chops, whatever you want to call them). These phrases serve as a “bag of tricks,” that the performer can use in various playing situations. The problem is… it can be really difficult to remember and keep track of all of them, in order to keep them fresh. The idea behind *PracticeBuddy* is to serve as a kind of “repository of phrases,” remembering every lick that a musician has ever learned and helping them practice these licks in an efficient manner. This way, the performer can focus on the important thing: keeping their arsenal clean, up to tempo, and ready to use at any moment.
 
