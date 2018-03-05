@@ -193,11 +193,11 @@ If no curated dates are available for a particular neighborhood, a message appea
 
 ![](https://i.imgur.com/Uho6Glz.png)
 
-If a user clicks on a date in the Homepage or in Browse view, the user is routed to the `ShowDate` component, using `React Router`. This view is really the user’s itinerary for the date. It tells them the neighborhood the date is in, gives some detail about the date as a whole, shows them an image that helps them visualize the neighborhood, and then describes each spot that the couple will go to throughout the date.
+If a user clicks on a date in the Homepage or Browse views, they are routed to the `ShowDate` component via `React Router`. This view is really the user’s itinerary for the date. It tells them the neighborhood it is in, gives some detail about the date as a whole, shows them an image of the neighborhood, and then goes into detail on each spot that the couple will experience throughout the date.
 
-`ShowDate` iterates through the spots of the selected date and generates a `SpotCard` component for each one, passing in the props that presentational component needs to render the correct information. This information for each spot includes the name of the spot, an image that was uploaded for that spot (or a default image, made possible via the super handy `Paperclip` gem), and a description of why that particular spot was chosen for this curated date.
+`ShowDate` iterates through the spots of the selected date and generates a `SpotCard` component for each one, passing in the props that they need to render the correct information. The information needed for each spot includes: the name of the spot, an image for the spot (or a default image, made possible via the super handy `Paperclip` gem), and a description of why that particular spot was chosen for this curated date.
 
-This particular date is in the Shaw neighborhood of DC and is for oriented towards beer lovers. They begin at *Right Proper Brewing Company*, then get outside and head to *Dacha Beer Garden*, and finally head to *Flash* for some late night, eclectic electronic music.
+This example date (see screenshots above) is in the Shaw neighborhood of DC and is oriented towards beer lovers. Couples will begin at *Right Proper Brewing Company*, then get outside and head to *Dacha Beer Garden*, and finally end up at *Flash* for some late night electronic music.
 
 <br>
 
@@ -207,11 +207,11 @@ This particular date is in the Shaw neighborhood of DC and is for oriented towar
 
 If the user selects “Edit Date” on a date’s show view, or they select “Curate” from the nav bar, they will be routed to the `CuratedDateForm` component. This is the form used for both creating and updating curated dates.
 
-The form has a number of input fields used for collecting information about the new or existing date. This includes fields for: the date’s title, a description for the date, the neighborhood it is in, a cover photos, and the ability to add as many spots for the date as they wish. Each `SpotForm` component (which is used inside the `CuratedDateForm` to collect the information for each spot) has fields for: the name of the spot, the category the spot is in, a description of the spot, and a photo for the spot.
+The form has a number of input fields used for collecting information about the new or existing date. This includes: the date’s title, a description for the date, the neighborhood it is in, a cover photo, and the ability to add as many spots as needed. Each `SpotForm` component (used inside the `CuratedDateForm` to collect information on each spot) has fields for: the name of the spot, the category the spot is in, a description, and a photo.
 
-These fields, as with all of the text inputs throughout the app, are controlled form inputs. This means they are directly attached to that component’s state and are updated using a host of functions, such as: `updateInput`, `updateSpotAttributes`, `updateCoverPhoto`, `updateSpotPhoto`, `addAdditionalSpot`, etc.
+These fields, as with all of the text inputs throughout the app, are controlled form inputs. This means that their values are directly attached to their component’s state and are they updated using a host of `onChange` callback functions, such as: `updateInput`, `updateSpotAttributes`, `updateCoverPhoto`, `updateSpotPhoto`, `addAdditionalSpot`, etc.
 
-In cases where there are stateless functional components handling the input of specific information inside container components (`SpotForm` being a good example), these functions to handle updates have been passed in as props and use the `bind` keyword to ensure that `this` continues to reference the container component.
+In cases where there are stateless functional components handling the input of specific information inside larger container components (`SpotForm` inside `CuratedDateForm` being a good example), these functions used in event handlers have been passed in as props and use the `bind` keyword to ensure that `this` continues to reference the parent container component.
 
 ```
 // CuratedDateForm.js
@@ -239,9 +239,9 @@ generateSpotForms() {
   }
 ```
 
-If a user wishes to edit an existing date, the same form is presented but it is auto-filled with the existing information for that date. This is done by firing the `fetchExistingDate` function in `dateActions` and setting the initial state of the `CuratedDateForm` component to the values in the response. Since the form’s fields are controlled, they will immediately reflect the values that are set in this initial state.
+If a user wishes to edit an existing date, the same form is presented but it is auto-filled with the existing information for that date. This is done by firing the `fetchExistingDate` function in `dateActions` and setting the initial state of the `CuratedDateForm` component to the response (by updating and accessing `editCuratedDate` in `store`). Since `CuratedDateForm`'s fields are controlled, they will immediately reflect the values that are set in its initial state.
 
-A word on next steps for this particular feature. Obviously, this form is something that should only be accessible to logged in users; and, at first, it will probably be further limited to “expert” users who have the authorization to curate dates. So, authentication and authorization are features I will be adding in the very near future. Eventually, the ability to curate dates will be opened to all users who have an account, to make the app more interactive.
+A word on next steps for this particular feature. Obviously, this form is something that should only be accessible to logged in users; and, at first, it will probably be further limited to “expert” users who have the authorization to curate dates. So, authentication and authorization are features that I will need to add in the very near future. Eventually, the ability to curate dates may be opened to all users who have an account, to make the app more interactive.
 
 <br>
 
