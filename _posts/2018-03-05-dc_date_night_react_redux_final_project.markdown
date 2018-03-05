@@ -250,9 +250,9 @@ A word on next steps for this particular feature. Obviously, this form is someth
 
 ![](https://i.imgur.com/xfidCU0.png)
 
-If a user doesn’t find anything that they like in curated dates, or if they just want more control over which activities they do throughout this occasion, they can have a custom date generated for them. This is accomplished using the `GenerateDateForm` component.
+If a user doesn’t find anything that they like in curated dates, or if they just want more control over which activities they do throughout the date, they can have a custom date generated, instead. This is accomplished using the `GenerateDateForm` component.
 
-First, they select a neighborhood from the `NeighborhoodSelect` component. Once a neighborhood has been selected, `collectCategoryOptions` fetches activity options that are available for that specific neighborhood. This is fired in the callback of `setState` inside the `updateNeighborhood` function, so that we can ensure the neigborhood has been set in `GenerateDateForm`’s state and can be included in the request for available activities.
+First, they select a neighborhood from the `NeighborhoodSelect` component. Once a neighborhood has been selected, `collectCategoryOptions` fetches activity options that are available for that specific neighborhood. This is accomplished in the callback of `setState` inside `updateNeighborhood`, so that we can ensure the neigborhood has been set in `GenerateDateForm`’s state and can be included in the request for activities.
 ```
 // GenerateDateForm.js
 updateNeighborhood = event => {
@@ -267,7 +267,7 @@ updateNeighborhood = event => {
   }
 	
 	// dateActions.js
-	export function collectCategoryOptions(neighborhood) {
+export function collectCategoryOptions(neighborhood) {
   return (dispatch) => {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -286,31 +286,31 @@ updateNeighborhood = event => {
 }
 ```
 
-The user can then select as many activities (called `categories` on the backend of the app) as they wish before clicking “Plan My Date”. This “Plan My Date” button is only available if they select both a neighborhood and at least one activity, as that is how appropriate Spots are queried from the database.
+The user can then select as many activities (called `categories` on the back end of the app) as they wish before clicking “Plan My Date”. This button is only available if they select a neighborhood and at least one activity, as that is how appropriate spots are queried from the database.
+
+Once a user has generated their custom date, they are shown the itinerary that they will embark on! The spots that are chosen for the date are in the neighborhood that the user has selected and belong to one of the categories that the user has indicated they are interested in. If numerous spot options are available for one of the neighborhood and activity combinations, a spot is selected at random—in the future, this may be further customized so that the most relevant spots are surfaced based on each user's preferences. There is also a button at the bottom of this view that allows the user to go back, in case they want to roll the dice again.
 
 ![](https://i.imgur.com/4h0mYgs.png)
-
-Once a user has generated their custom date, they are shown the itinerary that they will embark on! The spots that are chosen for their date must be in the neighborhood that the user has selected and must belong to one of the categories that the user has indicated they are interested in. If numerous Spot options are available for the neighborhood and activity combination, one is selected at random; though, in the future, this may be further customized so that the most relevant spots for each individual user are surfaced. They also have a button at the bottom of this view that allows them to go back, if they want to roll the dice again.
 
 <br>
 
 
 ***Next Steps***
 
-Part of the reason I loved the idea for DC Date Night is because of all the possibilities for expanding functionality. This is a project that I intend to keep building on and improving, moving forward. One obvious feature I plan on implementing soon is the ability to tap into third party APIs for the generation of custom dates. All of the date spots in the app right now are simply hard coded in; but I’m excited to start pulling from related platforms, such as: Foursquare for food recommendations, Ticketmaster for live music, Eventbrite for various events and city happenings—the possibilities are endless.
+Part of the reason I loved the idea of DC Date Night is because of all the possibilities for expanding functionality moving forward. This is a project that I intend to keep building and improving on. One obvious feature that I plan on implementing soon is the ability to tap into third party APIs for the generation of custom dates. Currently, all of the date spots in the application are manually entered into the database; but I’m excited to start pulling from other relevant platforms, such as: Foursquare for food recommendations, Ticketmaster for live music, Eventbrite for various events and city happenings—the possibilities are endless.
 
-As I mentioned before, I am also excited to roll my own authentication for DC Date Night, and in doing so, give users the ability to create and share their own dates that they think other users would enjoy. This will make the platform more interactive—more like a two-way dialogue. 
+As I mentioned before, I am also excited to roll my own authentication. In doing so, we can give users the ability to create and share their own dates, that they think other users would enjoy. This will make the platform more interactive and social.
 
-Since I come from a strategy background, the marketing possibilities also jump out at me. We could forge partnerships with various local influencers, whether they be social media personalities, food writers, cultural trendsetters, etc. These influential figures could share their knowledge and create their own curated dates for our users to try. Similarly, we could implement sponsored curated dates, so local restaurants, cocktail bars, music venues, etc could promote their brand in a unique and relevant way.
+Since I come from a strategy background, the marketing possibilities also jump out at me. DC Date Night could forge partnerships with various local influencers, whether they be social media personalities, food writers, cultural trendsetters, etc. These influential figures could share their knowledge and create their own curated dates for our users (and their followers) to try. Similarly, we could implement "sponsored curated dates," so local restaurants, cocktail bars, music venues, and other partners could promote their brand in a unique and relevant way.
 
-Finally, there are a lot of ways I could dive into new programming concepts, by continuing to build out this product. Integrating Google Maps to show the spots geographically, learning React Native to bring this idea to mobile devices in a native medium, using OAuth so users can login via their Facebook (or even Bumble?) account. There is a lot of work to be done, and so many directions it could go in. 
+Finally, there are a lot of ways I could dive into new tools, frameworks, and integrations, as I continue  to build out this product. Integrating Google Maps to show the spots geographically, learning React Native to bring this idea to mobile devices in a native way, using OAuth so users can login via their Facebook (or even dating app) account. There is a lot of work to be done, and so many directions it could go in.
 
 <br>
 
 
 ***Thanks!***
 
-So, that’s DC Date Night, up to this point. A simple web app that aims to make dating a little less stressful and a lot more fun—for first dates and 25 year anniversaries alike. Keep checking in to watch it grow and, if you’re ever in the DC area, give one of our dates a try! Just remember to take small bites.
+So, that’s DC Date Night, up to this point! A simple web app that aims to make dating a little less stressful and a lot more fun—for first dates and 25th year anniversaries alike. Keep checking in to watch it grow and, if you’re ever in the DC area, give one of our dates a try! Just remember, if there is food involved, take small bites.
 
 <iframe src="https://giphy.com/embed/jU2ZYjA8ngdKU" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/jU2ZYjA8ngdKU"></a></p>
 
