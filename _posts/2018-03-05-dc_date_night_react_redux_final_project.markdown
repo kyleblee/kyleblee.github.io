@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "DC Date Night—React / Redux Final Project"
-date:       2018-03-05 20:38:30 +0000
+date:       2018-03-05 15:38:31 -0500
 permalink:  dc_date_night_react_redux_final_project
 ---
 
@@ -21,6 +21,8 @@ Voila, your date is planned. Throw on a nice pair of shoes and go get ‘em!
 Now that you get the gist of the problem I am trying to solve, let’s walk through some of the initial views / features I have put together, so far. This web app uses React / Redux on the front-end, with a Rails API back-end. I’ll be focusing on the React side of things, throughout most of this post!
 
 <iframe src="https://giphy.com/embed/ikXcqqlSNH2Mw" width="480" height="358" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ikXcqqlSNH2Mw"></a></p>
+
+<br>
 
 
 ***Homepage***
@@ -86,6 +88,8 @@ render() {
 ```
 
 ![](https://i.imgur.com/jFGimmd.png)
+
+<br>
 
 ***Browse***
 
@@ -179,6 +183,8 @@ Right now it is just this one date, since this is the development site; but, ide
 
 If no curated dates are available for a specific neighborhood, a message appears telling the user so and suggests trying to generate a custom date for that neighborhood, instead. This is done by placing the message in the `errors` key of `BrowseDate`’s component state, and passing that value from the state into the `Errors` component via the `errors` prop. This `Errors` component is used for this exact purpose throughout the app, and conditionally displays errors only when they are present in the containing components state.
 
+<br>
+
 ***Curated Date Show View***
 
 ![](https://i.imgur.com/3vKcPLD.png)
@@ -191,7 +197,9 @@ If a user clicks on a date in the Homepage or in Browse view, the user is routed
 
 `ShowDate` iterates through the spots of the selected date and generates a `SpotCard` component for each one, passing in the props that presentational component needs to render the correct information. This information for each spot includes the name of the spot, an image that was uploaded for that spot (or a default image, made possible via the super handy `Paperclip` gem), and a description of why that particular spot was chosen for this curated date.
 
-This particular date is in the Shaw neighborhood of DC and is for oriented towards beer lovers. They begin at *Right Proper Brewing Company*, then get outside and head to *Dacha Beer Garden*, and finally head to *Flash* for some late night, eclectic electronic music.  
+This particular date is in the Shaw neighborhood of DC and is for oriented towards beer lovers. They begin at *Right Proper Brewing Company*, then get outside and head to *Dacha Beer Garden*, and finally head to *Flash* for some late night, eclectic electronic music.
+
+<br>
 
 ***Curate***
 
@@ -234,6 +242,8 @@ generateSpotForms() {
 If a user wishes to edit an existing date, the same form is presented but it is auto-filled with the existing information for that date. This is done by firing the `fetchExistingDate` function in `dateActions` and setting the initial state of the `CuratedDateForm` component to the values in the response. Since the form’s fields are controlled, they will immediately reflect the values that are set in this initial state.
 
 A word on next steps for this particular feature. Obviously, this form is something that should only be accessible to logged in users; and, at first, it will probably be further limited to “expert” users who have the authorization to curate dates. So, authentication and authorization are features I will be adding in the very near future. Eventually, the ability to curate dates will be opened to all users who have an account, to make the app more interactive.
+
+<br>
 
 
 ***Generate***
@@ -282,6 +292,8 @@ The user can then select as many activities (called `categories` on the backend 
 
 Once a user has generated their custom date, they are shown the itinerary that they will embark on! The spots that are chosen for their date must be in the neighborhood that the user has selected and must belong to one of the categories that the user has indicated they are interested in. If numerous Spot options are available for the neighborhood and activity combination, one is selected at random; though, in the future, this may be further customized so that the most relevant spots for each individual user are surfaced. They also have a button at the bottom of this view that allows them to go back, if they want to roll the dice again.
 
+<br>
+
 
 ***Next Steps***
 
@@ -292,6 +304,8 @@ As I mentioned before, I am also excited to roll my own authentication for DC Da
 Since I come from a strategy background, the marketing possibilities also jump out at me. We could forge partnerships with various local influencers, whether they be social media personalities, food writers, cultural trendsetters, etc. These influential figures could share their knowledge and create their own curated dates for our users to try. Similarly, we could implement sponsored curated dates, so local restaurants, cocktail bars, music venues, etc could promote their brand in a unique and relevant way.
 
 Finally, there are a lot of ways I could dive into new programming concepts, by continuing to build out this product. Integrating Google Maps to show the spots geographically, learning React Native to bring this idea to mobile devices in a native medium, using OAuth so users can login via their Facebook (or even Bumble?) account. There is a lot of work to be done, and so many directions it could go in. 
+
+<br>
 
 
 ***Thanks!***
