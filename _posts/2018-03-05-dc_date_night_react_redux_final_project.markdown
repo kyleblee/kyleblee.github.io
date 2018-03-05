@@ -6,19 +6,19 @@ permalink:  dc_date_night_react_redux_final_project
 ---
 
 
-Woah… it’s time for my *final* Flatiron School project! It’s definitely bittersweet, but overall I am excited and happy to be graduating! And, in my humble opinion, I saved the best project for last. This is something I plan on continuing to build out moving forward, but it’s at a good initial stopping point right now. Let’s get into it!
+Woah… it’s time for my *final* Flatiron School project! It’s definitely bittersweet, but overall I am excited and happy to be graduating! I'm also excited because, in my humble opinion, I saved the best project for last. This is something I plan on continuing to build out, moving forward; but it’s at a good initial stopping point right now, so let’s get into it!
 
 ***Idea***
 
-First, a little bit about the idea. DC Date Night is really centered on this feeling that… Dating can be pretty stressful. But, when you’re the person who takes on planning the date, it can be even *more* stressful. Whether you’re making a first impression, or planning something special for a longtime significant other, you want the date to be memorable, fun, and unique—all while having a feeling of spontaneity. Yikes…
+First, a little bit about the idea. DC Date Night is really centered around this feeling that: *Dating can be pretty stressful.* But, when you’re the person who takes on *planning* the date, *it can be even more stressful.* Whether you’re making a first impression, or planning something special for a longtime significant other, you want the date to be memorable, fun, and unique—all while having a feeling of spontaneity. Yikes…
 
-DC Date Night aims to relieve that stress by planning the date for you. It basically says, “Hey, you just worry about which outfit to wear, and we’ll figure out where you should go.” It does this in two ways, both of which are organized by the different neighborhoods throughout the District of Columbia.
+DC Date Night aims to relieve that stress, by planning the date for you. It basically says, “Hey, you just worry about which outfit to wear. I'll figure out where you should go.” It does this in two ways, both of which are organized by the different neighborhoods throughout the District of Columbia.
 * *Curated Dates*—these are dates put together by local DC experts. These experts might be food critics, mixologists, people in the know about art exhibits and museums, etc. They curate a phenomenal date and our users go along for the ride.
 * *Generating Custom Dates*—the second way to plan a date is by generating something custom. The user simply selects the neighborhood they would like to be in, chooses a few activities they want to do throughout the date, and our app generates a custom date, just for them.
 
 Voila, your date is planned. Throw on a nice pair of shoes and go get ‘em!
 
-Now that you get the gist of the problem I am trying to solve, let’s walk through some of the initial views / features I have put together, so far. This web app uses React / Redux on the front-end, with a Rails API back-end. I’ll be focusing on the React side of things, throughout most of this post!
+Now that you get the gist of the problem I am trying to solve, let’s walk through some of the initial views and features I have put together, so far. This web app uses React / Redux on the front end, with a Rails API back end. I’ll be focusing on React and Redux for this post!
 
 <iframe src="https://giphy.com/embed/ikXcqqlSNH2Mw" width="480" height="358" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ikXcqqlSNH2Mw"></a></p>
 
@@ -31,7 +31,7 @@ Now that you get the gist of the problem I am trying to solve, let’s walk thro
 
 The homepage is constructed with a stateful container component, called `Homepage` (duh!). The `return` statement in its `render` method is composed of two stateless functional components: `DateList` (which is passed `dates` as `props`) and `QuickAbout`. 
 
-I use the `componentDidMount` lifecycle method on `Homepage` to fire the `fetchDates` function in `dateActions.js`, once the component has mounted. This is the action that is responsible for asynchronously fetching dates throughout the app and it takes two parameters: the neighborhood that the user wants to see dates for (or just a blank string, to receive all dates) and the max number of dates it should receive in the response. In the case of the homepage, we set the cap to 20.
+I use the `componentDidMount` lifecycle method on `Homepage` to fire the `fetchDates` function in `dateActions.js`, once the component has mounted. This is the action that is responsible for asynchronously fetching dates throughout the application and it takes two parameters: the neighborhood that the user wants to see dates for (or just a blank string, to receive all dates) and the max number of dates it should receive in the response. In the case of the homepage, we set this cap to 20.
 
 ```
 // Homepage.js
@@ -67,7 +67,7 @@ export function fetchDates(neighborhood, cap) {
 }
 ```
 
-The homepage also has the About section, which is rendered using the presentational component, `QuickAbout`. I implemented the `scrollIntoView` method on the `window` object to gracefully bring the user to some information about the site, when they select “About” from the nav bar.
+The homepage also has the About section, which is rendered using the presentational component, `QuickAbout`. I implemented the `scrollIntoView` method on the `window` object to gracefully bring the user to this information about the site, when they select “About” from the nav bar.
 
 ```
 // Homepage.js
