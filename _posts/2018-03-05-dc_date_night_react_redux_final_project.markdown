@@ -95,7 +95,7 @@ render() {
 
 ![](https://i.imgur.com/uyTcPCn.png)
 
-Next is the browse feature. This is the view that is responsible for displaying all of the curated date options, sorted by neighborhood. The neighborhood options are collected via the `collectNeighborhoodOptions` function inside `dateActions`, which dispatches an action of `type: ‘COLLECT_NEIGHBORHOOD_OPTIONS’` and a `payload` of the parsed response, received from the Rails API. In the `datesReducer`, this updates the `options` object in the `store`, and these options are rendered via the `NeighborhoodSelect` presentational component in `BrowseDates`. The `componentDidMount` method helps us kick this process off, each time the `BrowseDates` component has successfully mounted.
+Next is the browse feature. This is the view that is responsible for displaying all of the curated date options, sorted by neighborhood. Available neighborhoods are collected via the `collectNeighborhoodOptions` function inside `dateActions`, which dispatches an action of `type: ‘COLLECT_NEIGHBORHOOD_OPTIONS’` and a `payload` of the parsed response that was received from the Rails API. In `datesReducer`, the corresponding case statement updates the `options` object in the `store`. These options are then rendered via the `NeighborhoodSelect` presentational component in `BrowseDates`. The `componentDidMount` method helps kick this process off, each time the `BrowseDates` component has successfully mounted.
 
 ```
 // dateActions.js
@@ -111,7 +111,7 @@ export function collectNeighborhoodOptions() {
 }
 ```
 
-Now that a neighborhood is selected, dates for that neighborhood are fetched asynchronously via the `fetchDates` function (which was mentioned earlier). We set the cap parameter to `undefined` in this case, in order to receive ALL of the relevant dates (with no maximum number of dates). This updates the `curatedDates` array in `store` via `FETCH_DATES` in `datesReducer`’s switch statement.
+Now that a neighborhood is selected, dates for that neighborhood are fetched asynchronously via the `fetchDates` function (which was mentioned earlier). We set the cap parameter to `undefined` in this case, in order to receive ALL of the relevant dates (with no cap). This updates the `curatedDates` array in `store` via `FETCH_DATES` in `datesReducer`’s switch statement.
 
 ```
 // datesReducer.js
@@ -158,7 +158,7 @@ export default function datesReducer(state = {
 }
 ```
 
-Finally, these dates are then rendered via the `DateList` component, which is also used in the `Homepage` container component. Both of these stateful components access the dates via `this.props`, which is made possible by the `mapStateToProps` function, as well as `connect` from the `react-redux` module . Similarly, all of the actions that are being called are made available via the `mapDispatchToProps` function.
+Finally, these dates are then rendered in `BrowseDates` via the `DateList` presentational component (which was also used in the `Homepage` container component). Both `BrowseDates` and `Homepage` access the dates via `this.props`, which is made possible by the `mapStateToProps` function, as well as `connect` from the `react-redux` module. Similarly, the actions that are being called in each component are made available via the `mapDispatchToProps` function.
 
 ```
 // BrowseDates.js
@@ -179,9 +179,9 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, mapDispatchToProps)(BrowseDates);
 ```
 
-Right now it is just this one date, since this is the development site; but, ideally there would be a lot more options here and one of the features I plan on implementing soon is pagination, to make the number of dates on each page less overwhelming by capping it at 15 or so.
+Right now it is just this one date (seen in the screenshot above), since this is the development site; but, ideally, there would be a lot more options available. One of the features I plan on implementing when there are more options is pagination, to make the number of dates on each page less overwhelming by capping it at 15 or so.
 
-If no curated dates are available for a specific neighborhood, a message appears telling the user so and suggests trying to generate a custom date for that neighborhood, instead. This is done by placing the message in the `errors` key of `BrowseDate`’s component state, and passing that value from the state into the `Errors` component via the `errors` prop. This `Errors` component is used for this exact purpose throughout the app, and conditionally displays errors only when they are present in the containing components state.
+If no curated dates are available for a particular neighborhood, a message appears telling the user so and suggesting that they try to generate a custom date for that neighborhood, instead. This is done by placing the informational message in the `errors` key of `BrowseDate`’s component state, and then passing that value from the state into the `Errors` component via the `errors` prop. This `Errors` component is used to conditionally surface error messages throughout the application when these messages are present in the containing components state.
 
 <br>
 
